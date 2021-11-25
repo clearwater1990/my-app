@@ -10,9 +10,20 @@
         />
       </v-col>
       <v-col class="mb-4" cols="6">
-        <h3 class="display-1 font-weight-bold mb-4">
-          决赛抽签
-        </h3>
+        <v-row class="text-center">
+          <v-col cols="12">
+          <h4 class="display-0 font-weight-normal mb-4">
+            国药·欧倍尔杯 第十二届浙江省大学生化学竞赛
+          </h4>
+          </v-col>
+        </v-row>
+        <v-row class="text-center">
+          <v-col cols="12">
+          <h3 class="display-1 font-weight-bold mb-4">
+            决赛抽签
+          </h3>
+          </v-col>
+        </v-row>
       </v-col>
       <v-col cols="3">
         <v-img
@@ -193,6 +204,9 @@ export default {
         "team_name": this.teamName,
         "members": [this.member_1, this.member_2, this.member_3, this.member_4]
       }
+      if (taskId == undefined || taskId < 1) {
+        taskId = 1
+      }
       let header = {'Content-Type': 'application/json'}
       axios.post(this.api.LoginURL + "/task/draw/" + taskId, body, header).then(response => {
         console.log(response)
@@ -209,6 +223,9 @@ export default {
     },
     queryResult() {
       let taskId = this.$route.params.id
+      if (taskId == undefined || taskId < 1) {
+        taskId = 1
+      }
       let header = {'Content-Type': 'application/json'}
       let url = this.api.LoginURL + "/task/" + taskId
       if (this.teamName != undefined) {
@@ -229,6 +246,9 @@ export default {
     },
     exportResult() {
       let taskId = this.$route.params.id
+      if (taskId == undefined || taskId < 1) {
+        taskId = 1
+      }
       let header = {'Content-Type': 'application/octet-stream', 'responseType': 'blob'}
       let url = this.api.LoginURL + "/task/export/" + taskId
       axios.get(url, header).then(res => {

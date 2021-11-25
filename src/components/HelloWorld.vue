@@ -3,7 +3,7 @@
     <v-row class="text-center">
       <v-col cols="3">
         <v-img
-            :src="require('../assets/school_logo.svg')"
+            :src="require('../assets/school_logo.jpg')"
             class="my-3"
             contain
             height="100"
@@ -27,7 +27,7 @@
       </v-col>
       <v-col cols="3">
         <v-img
-            :src="require('../assets/colleage_logo.svg')"
+            :src="require('../assets/colleage_logo.jpg')"
             class="my-3"
             contain
             height="100"

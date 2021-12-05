@@ -7,6 +7,12 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
+            path: '/',
+            redirect: '/task/1',
+            name: '投票主页',
+            component: HelloWorld
+        },
+        {
             path: '/task/:id/',
             name: '投票主页',
             component: HelloWorld
